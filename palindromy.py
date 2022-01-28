@@ -5,7 +5,7 @@ def is_palindrome(text):
     if type(text) == str:
       text = ''.join([symbol for symbol in text if symbol.isalpha()])
       return_text = text[::-1]
-      if text.capitalize() == return_text.capitalize():
+      if text.lower() == return_text.lower():
               return True
       else:
           return False
