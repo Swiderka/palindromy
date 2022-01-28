@@ -1,12 +1,15 @@
-text= input("Czy to palindrom? Podaj tekst: ")
-def palindrom(text):
-    i = len(text)
-    if i %2 == 1 and text[::1] == text[::-1]:
-        return True
-    elif i %2 == 0 and text[::1] == text[::-1]:
-        return True
+
+text=  input("Czy to palindrom? Podaj tekst: ")
+def is_palindrome(text):
+    
+    if type(text) == str:
+      text = ''.join([symbol for symbol in text if symbol.isalpha()])
+      return_text = text[::-1]
+      if text.capitalize() == return_text.capitalize():
+              return True
+      else:
+          return False
     else:
-        return False
+        print("Invalid input\nFunction works only with strings")
 
-
-print(palindrom(text))
+print(is_palindrome(text))
